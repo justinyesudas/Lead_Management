@@ -28,6 +28,17 @@ class details(models.Model):
         return self.course,trainer,Start_date,End_date
 
 class Qualifications(models.Model):
-    Qualifications_Name=models.CharField(max_length=10)
+    Qualifications_Name=models.CharField(max_length=15)
     def __str__(self):
         return self.Qualifications_Name
+
+class State(models.Model):
+    State_Name=models.CharField(max_length=20)
+    def __str__(self):
+        return self.State_Name
+
+class District(models.Model):
+    State_Name=models.ForeignKey(State,on_delete=models.CASCADE)
+    District_Name=models.CharField(max_length=30)
+    def __str__(self):
+        return self.District_Name
