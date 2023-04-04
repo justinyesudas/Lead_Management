@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import EnquirySource,followupstatus,batch,details,Qualifications,State,District
+from .models import EnquirySource,followupstatus,batch,details,Qualifications,State,District,StudentRegistration
 
 # Register your models here.
 
@@ -24,6 +24,9 @@ class Qualifications_Admin(admin.ModelAdmin):
     list_display=('Qualifications_Name',)
 admin.site.register(Qualifications,Qualifications_Admin)
 
+class StudentRegistration_Admin(admin.ModelAdmin):
+    list_display=('First_Name','Last_Name','Date_of_Birth','Guardian_Details','Whatsapp_Number','Contact_Number','batchname')
+admin.site.register(StudentRegistration,StudentRegistration_Admin)
 
 class State_Admin(admin.ModelAdmin):
     list_display=('State_Name',)
