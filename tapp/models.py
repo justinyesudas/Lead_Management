@@ -39,7 +39,7 @@ class State(models.Model):
 
 class District(models.Model):
     State_Name=models.ForeignKey(State,on_delete=models.CASCADE)
-    District_Name=models.CharField(max_length=30)
+    District_Name=models.CharField(max_length=30,default="trivandrum")
     def __str__(self):
         return self.District_Name
 
