@@ -54,3 +54,9 @@ class District(models.Model):
     District_Name=models.CharField(max_length=30)
     def __str__(self):
         return self.District_Name
+
+
+class Branche(models.Model):
+    Branch_name=models.CharField(max_length=200)
+    def __str__(self):
+        return self.Branch_name
