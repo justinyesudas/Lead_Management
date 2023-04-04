@@ -25,7 +25,7 @@ class Qualifications_Admin(admin.ModelAdmin):
 admin.site.register(Qualifications,Qualifications_Admin)
 
 class StudentRegistration_Admin(admin.ModelAdmin):
-    list_display=('First_Name','Last_Name','Date_of_Birth','Guardian_Details','Whatsapp_Number','Contact_Number','batchname')
+    list_display=('First_Name','Last_Name','Date_of_Birth','Name_of_Guardian','Guardian_Number','course','State_Name','District_Name','place','Whatsapp_Number','Contact_Number','batchname')
 admin.site.register(StudentRegistration,StudentRegistration_Admin)
 
 class State_Admin(admin.ModelAdmin):

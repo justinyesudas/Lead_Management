@@ -36,12 +36,17 @@ class StudentRegistration(models.Model):
     First_Name=models.CharField(max_length=25)
     Last_Name=models.CharField(max_length=25)
     Date_of_Birth=models.DateField()
-    Guardian_Details=models.CharField(max_length=25)
+    Name_of_Guardian=models.CharField(max_length=25)
+    Guardian_Number=models.IntegerField(max_length=10)
+    course=models.ForeignKey(details,on_delete=models.CASCADE)
+    State_Name=models.ForeignKey(State,on_delete=models.CASCADE)
+    District_Name=models.ForeignKey(District,on_delete=models.CASCADE)
+    place=models.CharField(max_length=30)
     Whatsapp_Number=models.IntegerField(max_length=10)
     Contact_Number=models.IntegerField(max_length=10)
     batchname = models.ForeignKey(batch,on_delete=models.CASCADE)
     def __str__(self):
-        return self.First_Name,self.Last_Name,self.Date_of_Birth,self.Guardian_Details,self.Whatsapp_Number,self.Contact_Number,self.batchname
+        return self.First_Name,self.Last_Name,self.Date_of_Birth,self.Name_of_Guardian,self.Guardian_Number,self.Whatsapp_Number,self.Contact_Number,self.batchname,self.course,self.State_Name,self.District_Name,self.place
 
 
 class State(models.Model):
