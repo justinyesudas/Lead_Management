@@ -31,6 +31,18 @@ class Qualifications(models.Model):
     Qualifications_Name=models.CharField(max_length=15)
     def __str__(self):
         return self.Qualifications_Name
+    
+class StudentRegistration(models.Model):
+    First_Name=models.CharField(max_length=25)
+    Last_Name=models.CharField(max_length=25)
+    Date_of_Birth=models.DateField()
+    Guardian_Details=models.CharField(max_length=25)
+    Whatsapp_Number=models.IntegerField(max_length=10)
+    Contact_Number=models.IntegerField(max_length=10)
+    batchname = models.ForeignKey(batch,on_delete=models.CASCADE)
+    def __str__(self):
+        return self.First_Name,self.Last_Name,self.Date_of_Birth,self.Guardian_Details,self.Whatsapp_Number,self.Contact_Number,self.batchname
+
 
 class State(models.Model):
     State_Name=models.CharField(max_length=20)
