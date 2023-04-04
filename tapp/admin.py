@@ -24,9 +24,6 @@ class Qualifications_Admin(admin.ModelAdmin):
     list_display=('Qualifications_Name',)
 admin.site.register(Qualifications,Qualifications_Admin)
 
-class StudentRegistration_Admin(admin.ModelAdmin):
-    list_display=('First_Name','Last_Name','Date_of_Birth','Name_of_Guardian','Guardian_Number','course','State_Name','District_Name','place','Whatsapp_Number','Contact_Number','batchname')
-admin.site.register(StudentRegistration,StudentRegistration_Admin)
 
 class State_Admin(admin.ModelAdmin):
     list_display=('State_Name',)
@@ -35,6 +32,12 @@ admin.site.register(State,State_Admin)
 class District_Admin(admin.ModelAdmin):
     list_display=('State_Name','District_Name')
 admin.site.register(District,District_Admin)
+
+
+class StudentRegistration_Admin(admin.ModelAdmin):
+    list_display=('First_Name','Last_Name','Date_of_Birth','Name_of_Guardian','Guardian_Number','course','State_Name','District_Name','place','Whatsapp_Number','Contact_Number','batchname')
+admin.site.register(StudentRegistration,StudentRegistration_Admin)
+
 
 
 class branchadmin(admin.ModelAdmin):
